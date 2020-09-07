@@ -21,6 +21,7 @@ import java.text.Format;
 import java.text.NumberFormat;
 import java.text.DecimalFormat;
 import java.util.Locale;
+import org.checkerframework.common.value.qual.IntVal;
 
 /**
  * <p>Abstract class for Number Validation.</p>
@@ -36,13 +37,13 @@ public abstract class AbstractNumberValidator extends AbstractFormatValidator {
     private static final long serialVersionUID = -3088817875906765463L;
 
     /** Standard <code>NumberFormat</code> type */
-    public static final int STANDARD_FORMAT = 0;
+    public static final @IntVal(0) int STANDARD_FORMAT = 0;
 
     /** Currency <code>NumberFormat</code> type */
-    public static final int CURRENCY_FORMAT = 1;
+    public static final @IntVal(1) int CURRENCY_FORMAT = 1;
 
     /** Percent <code>NumberFormat</code> type */
-    public static final int PERCENT_FORMAT  = 2;
+    public static final @IntVal(2) int PERCENT_FORMAT  = 2;
 
     private final boolean allowFractions;
     private final int     formatType;
